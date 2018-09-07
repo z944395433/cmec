@@ -14,7 +14,7 @@ public class UserServiceImpl implements IUserService {
 
     @Override
     public UserVo findUser(UserVo user) {
-        dao.findUser(user.getUserName(), user.getUserName());
+        System.out.println(dao.findUser(user.getUserName()).toString());
         return null;
     }
 }

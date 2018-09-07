@@ -17,6 +17,8 @@ public class login {
 
     @RequestMapping("/login.php")
     public String login (UserVo user) {
+        user.setUserName("123");
+        user.setPassword("123");
         iuser.findUser(user);
 
         System.out.println("hello world");
