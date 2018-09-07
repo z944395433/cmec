@@ -1,0 +1,15 @@
+server:
+  port: 8090
+spring:
+  datasource:
+    name: test
+    url: jdbc:mysql://127.0.0.1:3306/cmec_ysc?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 123
+    driver-class-name: com.mysql.jdbc.Driver
+  mvc:
+    static-path-pattern: /**
+mybatis:
+  mapper-locations: classpath:mybatis/*.xml
+  type-aliases-package: com.example/**/*
+
