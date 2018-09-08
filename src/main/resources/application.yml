@@ -8,8 +8,10 @@ spring:
     password: 123
     driver-class-name: com.mysql.jdbc.Driver
   mvc:
-    static-path-pattern: /**
+    static-path-pattern: /**  #路径就是static
+  resources:
+    static-locations: classpath:/static/   #classpath等于static同级
+
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.example/**/*
-

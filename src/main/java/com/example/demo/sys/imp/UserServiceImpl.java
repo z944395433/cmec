@@ -6,7 +6,7 @@ import com.example.demo.sys.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-@Service("userService")
+@Service
 public class UserServiceImpl implements IUserService {
 
     @Autowired
