@@ -4,5 +4,8 @@
   <select id="findUser" parameterType="string" resultType="com.example.demo.sys.vo.UserVo">
     select * from user where userName =#{username}
   </select>
+  <select id="login" parameterType="map" resultType="com.example.demo.sys.vo.UserVo">
+    select * from user where userName = #{username} and password=#{password}
+  </select>
 
 </mapper>
