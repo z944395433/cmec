@@ -13,7 +13,7 @@ public class ShiroConfigurationTest {
 
     @Test
     public void hh(){
-        String str = "{'name':'yys','age':'16'}";
+        String str = "{'sname':'yys','age':'16'}";
         UserVo user = new UserVo();
         user.setUserName("123");
         user.setPassword("***");
