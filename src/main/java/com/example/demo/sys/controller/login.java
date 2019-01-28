@@ -3,15 +3,13 @@ package com.example.demo.sys.controller;
 import com.example.demo.sys.imp.UserServiceImpl;
 import com.example.demo.sys.serviceImp.IUserService;
 import com.example.demo.sys.vo.UserVo;
-import org.apache.shiro.SecurityUtils;
-import org.apache.shiro.authc.UsernamePasswordToken;
-import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.HashMap;
 import java.util.Map;
 
 @RestController
@@ -19,7 +17,8 @@ import java.util.Map;
 public class login {
 
     @Autowired
-    private UserServiceImpl iuser;
+    private UserServiceImpl iUserService;
+
 
     @RequestMapping("/login.php")
     public String login (@RequestBody Map<String, Object> map) {
@@ -39,9 +38,27 @@ public class login {
 
         return "login success";
     }*/
-        iuser.findUser(user);
+//        iuser.findUser(user);
 
         System.out.println("hello world");
         return "hello world";
     }
+
+
+    @RequestMapping(value = "/hello.php",method = RequestMethod.POST)
+    public UserVo test(String username,String password) throws Exception {
+        //Object username = map.get("username");
+        System.out.println(username);
+        UserVo user = new UserVo();
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("userName","123");
+        map.put("password","123");
+        return iUserService.login(map);
+    }
+
+    @RequestMapping(value = "/data.php")
+    public String data(){
+        return "<div style=\"background-color: red;width:50px;height: 50px\">我是后台返的div</div>";
+    }
+
 }

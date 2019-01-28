@@ -3,9 +3,9 @@ server:
 spring:
   datasource:
     name: test
-    url: jdbc:mysql://127.0.0.1:3306/cmec_ysc?useUnicode=true&characterEncoding=utf8
+    url: jdbc:mysql://127.0.0.1:3306/cmnt_ysc?useUnicode=true&characterEncoding=utf8
     username: root
-    password: 123
+    password: root
     driver-class-name: com.mysql.jdbc.Driver
   mvc:
     static-path-pattern: /**  #路径就是static
@@ -15,3 +15,4 @@ spring:
 mybatis:
   mapper-locations: classpath:mybatis/*.xml
   type-aliases-package: com.example/**/*
+

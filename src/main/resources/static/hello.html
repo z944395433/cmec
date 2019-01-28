@@ -3,8 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <script src="js/jquery-3.3.1.js"></script>
 </head>
+
+
 <body>
-<div style="background-color: blue;width:100px;height: 100px"></div>
+<div style="background-color: blue;width:100px;height: 100px" id="data"></div>
+<button   id ="btnSave" value="123123" >按钮</button>
+
+<script>
+
+    function test(){
+        console.log($)
+        console.log("123")
+        console.log($("#btnSave").value())
+    }
+
+    $("#btnSave").click(function () {
+        console.log("123")
+        $.ajax({
+            "type":"get",
+            "url":"/sys/data.php",
+            "contentType":"application/json",
+            "data":"json",
+            success:function (data) {
+                $("#data").html(data)
+            }
+        })
+    })
+</script>
 </body>
+
 </html>

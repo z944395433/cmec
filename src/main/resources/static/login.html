@@ -7,15 +7,15 @@
 <script src="./js/jquery-3.3.1.js"></script>
 <body>
 <div class="head">
-    <form>
+    <form id=" from" method="post" action="/sys/hello.php">
         <table>
             <tr>
                 <td>账号：</td>
-                <td><input id="username" type="text" placeholder="请输入账号"></td>
+                <td><input id="username" name="username" type="text" placeholder="请输入账号"></td>
             </tr>
             <tr>
                 <td>密码：</td>
-                <td><input id="password" type="text" placeholder="请输入密码"></td>
+                <td><input id="password" name="password" type="text" placeholder="请输入密码"></td>
             </tr>
             <tr>
                 <td><button id="login" value="登录">登录</button>
@@ -29,15 +29,20 @@
 <script>
     $(function () {
         $("#login").click(function () {
-            $.ajax({
-                type:'post',
-                url:'/sys/login.php',
-                data:JSON.stringify({"username":$("#username").val(),"password":$("#password"),
-                success:function (data) {
-                    console.log(data);
-                }
-            })
+            $("#from").submit();
         })
-    })})
+
+    //     $("#login").click(function () {
+    //         $.ajax({
+    //             type:'post',
+    //             url:'/sys/login.php',
+    //             data:JSON.stringify({"username":$("#username").val(),"password":$("#password"),
+    //             success:function (data) {
+    //                 console.log(data);
+    //             }
+    //         })
+    //     })
+    // })
+    })
 </script>
 </html>
